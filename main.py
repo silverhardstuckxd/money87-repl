@@ -7,13 +7,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Hello, from Flask!'
-
-# route 名稱必須以斜線開頭
-@app.route('/home')
-def home():
     return render_template('home.html')
 
+# route 名稱必須以斜線開頭
 # 最佳五檔主頁
 @app.route('/fibest')
 def fibest():
