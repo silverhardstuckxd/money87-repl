@@ -1,6 +1,7 @@
 from flask import Flask
 # 匯入 render_template 以使用樣板
-from flask import render_template
+from flask import render_template, send_from_directory
+import os
 
 app = Flask(__name__)
 
@@ -17,7 +18,12 @@ def home():
 @app.route('/fibest')
 def fibest():
     return render_template('fibest.html')
-
+  
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+        'favicon.ico', mimetype='image/x-icon')
+  
 # 最佳五檔表格數據
 @app.route('/fibest/table/<price>')
 def fibest_table(price):
