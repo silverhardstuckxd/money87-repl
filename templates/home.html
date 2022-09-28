@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% set page_title = '首頁' %}
+{% set page_header = '台股計算機' %}
+
+{% block content %}
+  <h1 class="text-center mt-3">{{ page_header }}</h1>
+  <hr>
+  <div class="row">
+    <div class="col-lg-3 d-grid">
+      <a class="btn btn-primary" 
+         href="/fibest">最佳五檔
+      </a>
+    </div>
+  </div>
+{% endblock %}
